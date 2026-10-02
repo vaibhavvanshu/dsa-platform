@@ -1,12 +1,57 @@
 {
-  "placeholder": true,
   "feature_order": [
-    "bias", "sqrt_correct", "sqrt_wrong", "mean_difficulty",
-    "topic_arrays", "topic_strings", "topic_two_pointers", "topic_sliding_window",
-    "topic_hashmap", "topic_linkedlist", "topic_stack", "topic_trees",
-    "topic_graphs", "topic_dp"
+    "bias",
+    "sqrt_correct",
+    "sqrt_wrong",
+    "mean_difficulty",
+    "topic_arrays",
+    "topic_strings",
+    "topic_two_pointers",
+    "topic_sliding_window",
+    "topic_hashmap",
+    "topic_linkedlist",
+    "topic_stack",
+    "topic_trees",
+    "topic_graphs",
+    "topic_dp"
   ],
-  "theta": [0.42, 1.10, -0.65, -0.30, 0.20, 0.05, -0.10, -0.25, 0.00, 0.10, 0.05, -0.15, -0.30, -0.40],
+  "theta": [
+    0.740001,
+    0.475447,
+    -0.261138,
+    -0.327567,
+    0.080458,
+    0.007336,
+    0.163356,
+    0.044661,
+    -0.134219,
+    0.044482,
+    0.177592,
+    0.104732,
+    -0.222652,
+    -0.265528
+  ],
   "min_h": 0.25,
-  "max_h": 180.0
+  "max_h": 180.0,
+  "placeholder": true,
+  "model_version": "hlr-20261002-165346",
+  "data_source": "synthetic",
+  "data_sha256": "66beaaa0af41f03a",
+  "split": "by learner, 20% held-out",
+  "warm_started_from": null,
+  "frozen_indexes": [],
+  "metrics": {
+    "mae_recall": 0.3021,
+    "auc": 0.8527,
+    "n_train": 17266,
+    "n_test": 4423,
+    "baseline_fixed_7day": {
+      "mae_recall": 0.4666,
+      "auc": 0.8449
+    },
+    "baseline_avg_recall": {
+      "mae_recall": 0.4753,
+      "auc": 0.5
+    }
+  }
 }
