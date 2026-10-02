@@ -1,22 +1,26 @@
 package com.capstone.dsaplatform.controller;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import com.capstone.dsaplatform.dto.SubmissionDtos.SubmissionRequest;
+import com.capstone.dsaplatform.dto.SubmissionDtos.SubmissionResponse;
+import com.capstone.dsaplatform.service.SubmissionService;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * Phase 1A stub: the route exists so the frontend can be wired against it,
- * but returns 501 until the runner and learner-model logic are built.
- * Request/response shapes: docs/CONTRACT.md section 5.1.
- */
+/** CONTRACT.md section 5.1. Thin by design: all pipeline logic is in SubmissionService. */
 @RestController
 @RequestMapping("/api/submissions")
 public class SubmissionController {
 
+    private final SubmissionService submissionService;
+
+    public SubmissionController(SubmissionService submissionService) {
+        this.submissionService = submissionService;
+    }
+
     @PostMapping
-    public ResponseEntity<Void> submit() {
-        return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
+    public SubmissionResponse submit(@RequestBody SubmissionRequest request) {
+        return submissionService.submit(request);
     }
 }

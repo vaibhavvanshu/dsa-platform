@@ -1,0 +1,12 @@
+{
+  "placeholder": true,
+  "feature_order": [
+    "bias", "sqrt_correct", "sqrt_wrong", "mean_difficulty",
+    "topic_arrays", "topic_strings", "topic_two_pointers", "topic_sliding_window",
+    "topic_hashmap", "topic_linkedlist", "topic_stack", "topic_trees",
+    "topic_graphs", "topic_dp"
+  ],
+  "theta": [0.42, 1.10, -0.65, -0.30, 0.20, 0.05, -0.10, -0.25, 0.00, 0.10, 0.05, -0.15, -0.30, -0.40],
+  "min_h": 0.25,
+  "max_h": 180.0
+}

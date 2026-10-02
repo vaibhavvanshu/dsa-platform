@@ -3,6 +3,12 @@ package com.capstone.dsaplatform.repository;
 import com.capstone.dsaplatform.entity.TopicState;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-// Query methods are added in the phase that first needs them, so none exist unused.
+import java.util.List;
+import java.util.Optional;
+
 public interface TopicStateRepository extends JpaRepository<TopicState, Long> {
+
+    Optional<TopicState> findByUserIdAndTopicId(Long userId, Long topicId);
+
+    List<TopicState> findByUserId(Long userId);
 }
