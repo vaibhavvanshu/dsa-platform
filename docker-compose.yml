@@ -1,0 +1,24 @@
+# PostgreSQL for the "postgres" Spring profile.
+# DB_PORT lets you move the host port (e.g. 5433) if 5432 is already taken,
+# without editing this file:  DB_PORT=5433 docker compose up -d
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: dsa-platform-db
+    environment:
+      POSTGRES_DB: dsa_platform
+      POSTGRES_USER: dsa
+      POSTGRES_PASSWORD: dsa
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      # Named volume so attempt history survives container restarts.
+      - dsa_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dsa -d dsa_platform"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  dsa_pgdata:
